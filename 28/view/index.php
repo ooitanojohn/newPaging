@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 
 <head>
     <meta charset="UTF-8">
@@ -43,18 +43,21 @@
             </table>
             <div class="pageNav">
                 <!-- 前に戻る -->
-                <a href="index.php?page<?php echo $_GET['page'] - 1 ?>" class="<?php echo $_GET['page'] - 1 >= 0 ? '' : 'none' ?>">BACK</a>
-                <!-- 0ページ目 -->
-                <a href="index.php?page=0" class="<?php echo $_GET['page'] == 0 ? 'none' : '' ?>">0</a>
+                <a href="index.php?page=<?php echo $_GET['page'] - 1 ?>" class="<?php echo $_GET['page'] - 1 >= 0 ? '' : 'none' ?>">BACK</a>
+                <!-- 0ページ目  6ページ以上から表示-->
+                <a href="index.php?page=0" class="<?php echo $_GET['page'] - 5 <= 0 ? 'none' : '' ?>">0</a>
+                <!-- ... 現ページ6ページ以上から表示 -->
+                <span class="<?php echo $_GET['page'] - 5 <= 0 ? 'none' : '' ?>">...</span>
                 <!-- 現在のページ後10ページを表示-->
-                <?php for ($i = $_GET['page']; $i < $_GET['page'] + 10; $i++) { ?>
-                    <a href="index.php?page=<?php echo $i ?>" class="<?php echo $i == $_GET['page'] ? 'none' : '' ?>"><?php echo $i ?></a>
+                <?php for ($i = $_GET['page'] - 5; $i < $_GET['page'] + 5; $i++) { ?>
+                    <a href="index.php?page=<?php echo $i ?>" class="<?php echo $i == $_GET['page'] || $i < 0 || $i > $pageLinks ? 'none' : '' ?>"><?php echo $i ?></a>
                 <?php } ?>
-                <span>...</span>
-                <!-- 最後のページ -->
-                <a href="index.php?page=<?php echo $pageLinks ?>" class="<?php echo $_GET['page'] == $pageLinks ? 'none' : '' ?>"><?php echo $pageLinks ?></a>
+                <!-- ... 現ページ max-5 ページ以下から表示-->
+                <span class="<?php echo $_GET['page'] + 5 >= $pageLinks ? 'none' : '' ?>">...</span>
+                <!-- 最後のページ 現ページ max-5 ページ以下から表示-->
+                <a href="index.php?page=<?php echo $pageLinks ?>" class="<?php echo $_GET['page'] + 5 >= $pageLinks ? 'none' : '' ?>"><?php echo $pageLinks ?></a>
                 <!-- 次に進む -->
-                <a href="index.php?page<?php echo $_GET['page'] + 1 ?>" class="<?php echo $_GET['page'] + 1 <= $pageLinks ? '' : 'none' ?>">NEXT</a>
+                <a href="index.php?page=<?php echo $_GET['page'] + 1 ?>" class="<?php echo $_GET['page'] + 1 <= $pageLinks ? '' : 'none' ?>">NEXT</a>
             </div>
         </article>
     </main>
