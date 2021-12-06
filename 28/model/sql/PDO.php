@@ -1,5 +1,5 @@
 <?php
-require_once '../../../../const.php';
+
 /**
  * SQL接続
  *

@@ -1,5 +1,5 @@
 <?php
-require_once '../sql/PDO.php';
+
 /**
  *ページング 引数 現在のページ数,ページ一覧表示する初めの数
  *@param int $_GET['page']
@@ -43,16 +43,35 @@ class Paging extends SQL
         } else {
             $pageLinks = intval($DBNum / 5);
         }
-        return [$dataLists, $pageLinks];
+        return [$dataLists, $pageLinks]
     }
     // 検索条件 etc..
+
+    // pageLink表示onoff
+    // 前に戻る
+    public function pageLinkBack($GET)
+    {
+        $pageLinkBack = $_GET['page'] - 1;
+        $pLBclass = $GET - 1 >= 0 ? '' : 'none';
+        return [$pageLinkBack, $pLBclass]
+    }
+    // ページ6ページ以上から表示
+    public function pageLinkTop($GET)
+    {
+        return $_GET - 5 <= 0 ? 'none' : ''
+    }
+    // ページ前後10ページを表示
+    public function
+    // max-5 ページ以下から表示
+
+    // 次に進む
 }
 // 1 GET値を取得 controller
-$Paging = new Paging(isset($_GET['page']) === true ? $_GET['page'] : NULL);
-var_dump($Paging);
+// $Paging = new Paging(isset($_GET['page']) === true ? $_GET['page'] : NULL);
+// var_dump($Paging);
 // 2 GET値 * 表示数の要素を一覧表示 model
 // 3 ページリンク作成 必要ページ数を求める model
-list($dataLists, $pageLinks) = $Paging->getPageAll();
+// list($dataLists, $pageLinks) = $Paging->getPageAll();
 
 
 // 1 GET値を取得 controller
