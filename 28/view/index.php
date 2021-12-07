@@ -16,7 +16,7 @@
 <body>
     <nav>
         <div>
-            <p><img></p>
+            <p><img alt="サムネイル画像" width="100" height="100"></p>
             <p>ログイン名</p>
         </div>
         <form method="post">
@@ -43,19 +43,19 @@
             </table>
             <div class="pageNav">
                 <!-- 前に戻る -->
-                <a href="index.php?page=<?php echo $pageLinkBack ?>" class="<?php echo $pLBclass ?>">BACK</a>
+                <a href="index.php?page=<?php echo $_GET['page'] - 1 ?>" class="<?php echo $pLBclass ?>">BACK</a>
                 <!-- 0ページ目  6ページ以上から表示-->
                 <a href="index.php?page=0" class="<?php echo $pLTclass ?>">0</a>
                 <!-- ... 6ページ以上から表示 -->
                 <span class="<?php echo $pLTclass ?>">...</span>
                 <!-- 前後10ページを表示-->
-                <?php for ($i = $_GET['page'] - 5; $i < $_GET['page'] + 5; $i++) { ?>
+                <?php for ($i = $_GET['page'] + $pageLinkNum[0]; $i <= $_GET['page'] + $pageLinkNum[1]; $i++) { ?>
                     <a href="index.php?page=<?php echo $i ?>" class="<?php echo $i == $_GET['page'] || $i < 0 || $i > $pageLinks ? 'none' : '' ?>"><?php echo $i ?></a>
                 <?php } ?>
-                <!-- ... max-5 ページ以下から表示-->
-                <span class="<?php echo $_GET['page'] + 5 >= $pageLinks ? 'none' : '' ?>">...</span>
+                <!-- ... max-5ページ以下から表示-->
+                <span class="<?php echo $pageLinkLast ?>">...</span>
                 <!-- 最後のページ max-5 ページ以下から表示-->
-                <a href="index.php?page=<?php echo $pageLinks ?>" class="<?php echo $_GET['page'] + 5 >= $pageLinks ? 'none' : '' ?>"><?php echo $pageLinks ?></a>
+                <a href="index.php?page=<?php echo $pageLinks ?>" class="<?php echo $pageLinkLast ?>"><?php echo $pageLinks ?></a>
                 <!-- 次に進む -->
                 <a href="index.php?page=<?php echo $_GET['page'] + 1 ?>" class="<?php echo $_GET['page'] + 1 <= $pageLinks ? '' : 'none' ?>">NEXT</a>
             </div>

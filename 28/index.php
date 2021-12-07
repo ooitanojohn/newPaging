@@ -16,9 +16,13 @@ $Paging = new Paging(isset($_GET['page']) === true ? $_GET['page'] : NULL);
 list($newsLists, $pageLinks) = $Paging->getPageAll();
 // 4 ページリンク 表示 && onoff
 // 前に戻る
-list($pageLinkBack, $pLBclass) = $Paging->pageLinkBack($_GET['page']);
+list($pageLinkBack, $pLBclass) = $Paging::pageLinkBack($_GET['page']);
 // 6ページ以上から表示
-$pLTclass = $Paging->pageLinkTop($_GET['page']);
+$pLTclass = $Paging::pageLinkTop($_GET['page']);
 // 前後10ページを表示
+$pageLinkNum = $Paging::pageLinkNum($_GET['page'], $pageLinks);
+// max-5 ページ以下から表示
+$pageLinkLast = $Paging::pageLinkLast($_GET['page'], $pageLinks);
+// 次に進む
 
 require_once 'view/index.php';

@@ -23,7 +23,7 @@ class Paging extends SQL
         parent::__construct();
     }
     /**
-     * 全件そのまま取得 返り値 DBデータ一覧,最大ページリンク数
+     * 2,3 全件そのまま取得 返り値 DBデータ一覧,最大ページリンク数
      * @return array $dataLists
      * @return int $pageLinks
      */
@@ -43,28 +43,48 @@ class Paging extends SQL
         } else {
             $pageLinks = intval($DBNum / 5);
         }
-        return [$dataLists, $pageLinks]
+        return [$dataLists, $pageLinks];
     }
     // 検索条件 etc..
 
     // pageLink表示onoff
     // 前に戻る
-    public function pageLinkBack($GET)
+    public static function pageLinkBack($GET)
     {
         $pageLinkBack = $_GET['page'] - 1;
         $pLBclass = $GET - 1 >= 0 ? '' : 'none';
-        return [$pageLinkBack, $pLBclass]
+        return [$pageLinkBack, $pLBclass];
     }
     // ページ6ページ以上から表示
-    public function pageLinkTop($GET)
+    public static function pageLinkTop($GET)
     {
-        return $_GET - 5 <= 0 ? 'none' : ''
+        return $GET - 5 <= 0 ? 'none' : '';
     }
     // ページ前後10ページを表示
-    public function
+    public static function pageLinkNum($GET, $pageLinks)
+    {
+        switch ($GET) {
+            case 0 < $GET && $GET < 4:
+                $linkNum = [-$GET, 10];
+                break;
+            case $pageLinks - 4 < $GET && $GET <= $pageLinks:
+                $linkNum = [-10 + ($pageLinks - $GET), $pageLinks - $GET];
+                break;
+            default:
+                $linkNum = [-5, 5];
+                break;
+        }
+        return $linkNum;
+    }
     // max-5 ページ以下から表示
-
+    public static function pageLinkLast($GET, $pageLinks)
+    {
+        return $GET + 5 >= $pageLinks ? 'none' : '';
+    }
     // 次に進む
+    public static function pageLinkNext($GET)
+    {
+    }
 }
 // 1 GET値を取得 controller
 // $Paging = new Paging(isset($_GET['page']) === true ? $_GET['page'] : NULL);
