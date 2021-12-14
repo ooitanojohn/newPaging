@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/import.css">
     <style>
         .none {
             display: none;
@@ -14,15 +15,17 @@
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p><img alt="サムネイル画像" width="100" height="100"></p>
-            <p>ログイン名</p>
-        </div>
-        <form method="post">
-            <button type="submit" name="logout">ログアウト</button>
-        </form>
-    </nav>
+    <header>
+        <h1>PH24後期評価課題</h1>
+        <nav>
+            <div>
+                <p><img src="<?php echo DIR_IMG . $_SESSION['id'] . '/' . 'thumb_' . $_SESSION['file_name'] ?>" alt="サムネイル画像" width="60" height="70"></p>
+            </div>
+            <form method="post">
+                <button type="submit" name="logout">ログアウト</button>
+            </form>
+        </nav>
+    </header>
     <main>
         <article>
             <h2>&nbsp;</h2>
@@ -38,6 +41,12 @@
                         <td><?php echo $news['created_at'] ?></td>
                         <td><?php echo $news['title'] ?></td>
                         <td><?php echo $news['content'] ?></td>
+                        <td>
+                            <form method="post">
+                                <input type="hidden" name="pdfId" value="<?php echo $news['id'] ?>" />
+                                <button type="submit" name="pdf">PDFダウンロード</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </table>
@@ -61,6 +70,9 @@
             </div>
         </article>
     </main>
+    <footer>
+        <address>PH24</address>
+    </footer>
 </body>
 
 </html>

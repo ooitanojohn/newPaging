@@ -4,7 +4,7 @@
  *ページング 引数 現在のページ数,ページ一覧表示する初めの数
  *@param int $_GET['page']
  */
-class Paging extends SQL
+class Paging extends CRUD
 {
     protected int $GetPageNum;
     protected int $pageElementStart;
@@ -12,6 +12,8 @@ class Paging extends SQL
     // 1 GET値を取得 controller
     public function __construct($GetPageNum)
     {
+        // 親メソッドを呼び出し
+        parent::__construct();
         if (isset($GetPageNum)) {
             $this->GetPageNum = $GetPageNum;
             $this->pageElementStart = $GetPageNum * 5;
@@ -19,8 +21,6 @@ class Paging extends SQL
             $this->GetPageNum = 0;
             $this->pageElementStart = 0;
         }
-        // 親メソッドを呼び出し
-        parent::__construct();
     }
     /**
      * 2,3 全件そのまま取得 返り値 DBデータ一覧,最大ページリンク数
