@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
         }
     }
     // mail妥当性
-    if ($post->validateMail()) {
+    if ($post->validateMail() && empty($err['mail']['empty'])) {
         $err['mail']['validate'] = ERR_MAIL;
     }
     $post = $post->getPost();

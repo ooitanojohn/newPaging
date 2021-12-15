@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/import.css">
 </head>
 
 <body>
+    <?php require_once 'base/header.php' ?>
     <form method="post" enctype="multipart/form-data">
         <p>氏名<span><?php echo $sql['name'] ?></span></p>
         <label for="password-L">パスワード<?php echo $err['not'] ?></label>
@@ -17,6 +19,7 @@
         <input type="file" id="img-L" name="file">
         <button type="submit" name="submit">確認</button>
     </form>
+    <?php require_once 'base/footer.php' ?>
 </body>
 
 </html>
