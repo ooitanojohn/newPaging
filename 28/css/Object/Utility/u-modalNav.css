@@ -1,0 +1,47 @@
+#u-modalNav {
+  border-left: 1px solid grey;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 20%;
+  /* background-color: #3a302d; */
+  background-color: white;
+  z-index: 100;
+  color: white;
+}
+.u-padding-inner {
+  padding: 40px 40px;
+}
+.u-closeModal {
+  cursor: pointer;
+  float: right;
+  font-size: 50px;
+  border-radius: 50%;
+  /* border: 1px solid #3a302d; */
+  background-color: #3a302d;
+  height: 50px;
+  width: 50px;
+}
+
+/* リンク大きさ */
+/* .u-padding-inner ul li {
+  height: 40px;
+  width: 100px;
+  text-align: center;
+} */
+/* ハンバーガーメニュー */
+.u-padding-inner svg {
+  /* margin-top: 10px; */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 12px;
+}
+/* .u-padding-inner ul li:nth-child(1) {
+  height: 100px;
+} */
+/* リンクテキスト */
+/* .u-padding-inner ul li span {
+  display: block;
+} */

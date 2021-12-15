@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/import.css">
+    <!-- jquery -->
+    <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <?php require_once 'base/header.php' ?>
-    <main>
+    <?php require_once 'base/header.php';
+    require_once 'base/modalNavEtc.php' ?>
+    <main class="c-padding-bottom_100">
         <article>
-            <div class="u-complete-form-size c-padding-bottom_100">
+            <div class="u-complete-form-size">
                 <div>
                     <h2 class="u-font-config-h2">ログイン</h2>
                 </div>
@@ -36,6 +39,7 @@
             </div>
     </main>
     <?php require_once 'base/footer.php' ?>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

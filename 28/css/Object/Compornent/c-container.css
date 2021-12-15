@@ -1,0 +1,16 @@
+.c-container_500px {
+  width: 500px;
+  margin: 0 auto 10px auto;
+}
+.c-container_400px {
+  width: 400px;
+  margin: 0 auto 10px auto;
+}
+.c-container_75 {
+  width: 75%;
+  margin: 0 auto 10px auto;
+}
+.c-container_50 {
+  width: 50%;
+  margin: 0 auto 10px auto;
+}

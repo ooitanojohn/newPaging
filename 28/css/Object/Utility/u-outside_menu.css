@@ -1,0 +1,44 @@
+@media only screen and (min-width: 768px) {
+  #outerSidebar_menu {
+    right: 34px;
+    top: 36px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+  }
+}
+
+#outerSidebar_menu {
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  z-index: 1100;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-user-select: none;
+  background-color: #3a302d;
+  border: 1px solid #3a302d;
+}
+.menu-icon {
+  transform: translate3d(-50%, 0, 0);
+  -webkit-transform: translate3d(-50%, 0, 0);
+}
+.menu-icon,
+.menu-icon:before,
+.menu-icon:after {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  margin-top: -1px;
+  height: 1px;
+  width: 16px;
+  cursor: pointer;
+  background: #fff;
+  display: block;
+  content: "";
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}

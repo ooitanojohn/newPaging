@@ -13,6 +13,10 @@ if (isset($_POST['back'])) {
     header('Location:entry.php');
     exit;
 }
+if (!isset($_SESSION['name'])) {
+    header('Location:entry.php');
+    exit;
+}
 // 登録ボタン押した
 if (isset($_POST['entry'])) {
     $User = new CreateUser();

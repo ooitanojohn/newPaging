@@ -12,46 +12,39 @@
             display: none;
         }
     </style>
+    <!-- jquery -->
+    <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <?php require_once 'base/header.php' ?>
-    <header>
-        <p><?php echo $_SESSION['name'] ?>さん</p>
-        <nav>
-            <div>
-                <p><img src="<?php echo DIR_IMG . $_SESSION['id'] . '/' . 'thumb_' . $_SESSION['file_name'] ?>" alt="サムネイル画像" width="60" height="70"></p>
-            </div>
-            <form method="post">
-                <button type="submit" name="logout">ログアウト</button>
-            </form>
-        </nav>
-    </header>
+    <?php require_once 'base/indexHeader.php';
+    require_once 'base/modalNav.php' ?>
     <main class="c-padding-bottom_50">
-        <article>
-            <h2>&nbsp;</h2>
-            <div class="c-padding-bottom_50">
-                <table>
-                    <summary>NEWS</summary>
-                    <tr>
-                        <th>日時</th>
-                        <th>タイトル</th>
-                        <th>コンテンツ</th>
-                    </tr>
+        <article class="l-container">
+            <h2 class="c-font-config-h2_38 c-text-center c-padding-bottom_75">NEWS</h2>
+            <div class="c-padding-bottom_100 c-flex">
+                <p class="c-flex-basis_25"><img src="view/img/news3.jpg" alt="news" width="100%" height="100%" /></p>
+                <p class="c-flex-basis_15 c-text-center ">Archives</p>
+                <div class="c-flex-basis_60">
                     <?php foreach ($newsLists as $news) { ?>
-                        <tr>
-                            <td><?php echo $news['created_at'] ?></td>
-                            <td><?php echo $news['title'] ?></td>
-                            <td><?php echo $news['content'] ?></td>
-                            <td>
+                        <ul class="c-flex c-padding-bottom_30">
+                            <div class="c-flex-basis_80">
+                                <div class="c-flex">
+                                    <li class="c-padding-bottom_30"><?php echo $news['created_at'] ?><span class="c-margin-row_10">-</span></li>
+                                    <li><?php echo $news['title'] ?></li>
+                                </div>
+                                <li><?php echo $news['content'] ?></li>
+                            </div>
+                            <li class="c-flex-basis_20 c-text-center">
                                 <form method="post">
                                     <input type="hidden" name="pdfId" value="<?php echo $news['id'] ?>" />
-                                    <button type="submit" name="pdf">PDFダウンロード</button>
+                                    <button type="submit" name="pdf" class="c-entry-button">PDFdl</button>
                                 </form>
-                            </td>
-                        </tr>
+                            </li>
+                        </ul>
+                        <div class="c-border-bottom_grey c-margin-bottom_30">&nbsp</div>
                     <?php } ?>
-                </table>
+                </div>
             </div>
             <!-- ページネーション -->
             <div class="c-flex c-justify-content-center" id="u-pageNav">
@@ -87,6 +80,7 @@
         </article>
     </main>
     <?php require_once 'base/footer.php' ?>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

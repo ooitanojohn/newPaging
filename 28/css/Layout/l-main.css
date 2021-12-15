@@ -1,30 +1,31 @@
 @charset "utf-8";
 
 /* スマホ */
-main{
-    /* min-height: 80vh; */
-    width: calc(100% - 50px);
+main {
+  /* min-height: 80vh; */
+  width: calc(100% - 50px);
+  /* position: relative;
+  top: 150px; */
+  padding-top: 150px;
 }
-article{
-    /* height:80vh; */
-    width: calc(100% - 50px);
-    margin-left: 50px;
+article {
+  /* height:80vh; */
+  width: calc(100% - 50px);
+  margin-left: 50px;
 }
 /* タブレット */
-@media screen and (min-width:768px){
-    main{
-        width: calc(100% - 100px);
-    }
-
+@media screen and (min-width: 768px) {
+  main {
+    width: calc(100% - 100px);
+  }
 }
 /* PC */
-@media screen and (min-width:990px) {
-    main{
-        width: calc(100% - 150px);
-    }
-    article{
+@media screen and (min-width: 990px) {
+  main {
+    width: calc(100% - 150px);
+  }
+  article {
     width: calc(100% - 100px);
     margin-left: 100px;
-}
-
+  }
 }

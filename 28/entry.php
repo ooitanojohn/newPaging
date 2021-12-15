@@ -66,6 +66,10 @@ if (isset($_POST['submit'])) {
         header('Location:confirm.php');
         exit;
     }
+    // errがあればpass再度入力
+    if (!empty($errJudge && empty($err['password']['empty']))) {
+        $msg['reWrite'] = "パスワードを再度入力してください";
+    }
 }
 
 require_once 'view/entry.php';

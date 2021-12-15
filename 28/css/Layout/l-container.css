@@ -1,13 +1,25 @@
 @charset "utf-8";
 
-.l-container{
-    width: calc(100% - 50px);
-    margin-left: 50px;
+.l-container {
+  width: calc(100% - 50px);
+  margin-left: 50px;
 }
 /* PC */
-@media screen and (min-width:990px) {
-    .l-container{
+@media screen and (min-width: 990px) {
+  .l-container {
     width: calc(100% - 100px);
     margin-left: 100px;
+  }
 }
+
+.l-container-nav {
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}
+/* PC */
+@media screen and (min-width: 990px) {
+  .l-container-nav {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+  }
 }

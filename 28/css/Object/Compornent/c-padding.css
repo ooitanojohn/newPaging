@@ -2,8 +2,14 @@
 .c-padding-bottom_10 {
   padding-bottom: 10px;
 }
+.c-padding-bottom_30 {
+  padding-bottom: 30px;
+}
 .c-padding-bottom_50 {
   padding-bottom: 50px;
+}
+.c-padding-bottom_75 {
+  padding-bottom: 75px;
 }
 .c-padding-bottom_100 {
   padding-bottom: 100px;
@@ -17,6 +23,12 @@
 /* top */
 .c-padding-top_50 {
   padding-top: 50px;
+}
+.c-padding-top_75 {
+  padding-top: 75px;
+}
+.c-padding-top_100 {
+  padding-top: 100px;
 }
 
 /*  */

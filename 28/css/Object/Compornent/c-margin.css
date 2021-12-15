@@ -1,9 +1,22 @@
-.c-margin-zero-auto{
-    margin: 0 auto;
+/* 中央 */
+.c-margin-zero-auto {
+  margin: 0 auto;
 }
-.c-margin-right_5{
-    margin-right: 5px;
+/* 左右間 */
+.c-margin-row_10 {
+  margin: 10px;
 }
-.c-margin-bottom_10{
-    margin-bottom: 10px;
+/* 右 */
+.c-margin-right_5 {
+  margin-right: 5px;
+}
+/* 下 */
+.c-margin-bottom_10 {
+  margin-bottom: 10px;
+}
+.c-margin-bottom_30 {
+  margin-bottom: 30px;
+}
+.c-margin-bottom_50 {
+  margin-bottom: 50px;
 }

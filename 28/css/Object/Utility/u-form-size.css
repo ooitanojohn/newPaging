@@ -1,5 +1,9 @@
-.u-complete-form-size div{
-    width: 300px;
-    /* margin: 0 auto; */
-    margin: 0 auto 10px auto;
+.u-complete-form-size div {
+  width: 320px;
+  /* margin: 0 auto; */
+  margin: 0 auto 10px auto;
+}
+
+.u-complete-form-size span {
+  margin-left: 10px;
 }
