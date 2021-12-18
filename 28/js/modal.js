@@ -4,15 +4,18 @@ const modalOpen = document.getElementById("p-aside-nav-icon");
 // open
 modalOpen.addEventListener("click", () => {
   modalArea.style.display = "block";
+  window.setTimeout(function () {
+    modalArea.style.marginRight = "0px";
+  }, 1);
 });
 // close
 const modalClose = document.getElementsByClassName("u-closeModal")[0];
 modalClose.addEventListener("click", () => {
   modalArea.style.display = "none";
+  modalArea.style.marginRight = "-200px";
 });
 
 // jquery
-
 $(function () {
   // スクロールが100pxの位置に達したらheaderを消す
   $(window).on("scroll", () => {
@@ -22,17 +25,6 @@ $(function () {
       $("#fixed-header").fadeIn();
     }
   });
-
-  // 横スライドモーダル ナビクリックで表示
-  // $("#p-aside-nav-icon").on("click", function () {
-  //   if ($("#p-aside-nav-icon").hasClass("off")) {
-  //     $("#p-aside-nav-icon").removeClass("off");
-  //     $(this).animate({ marginLeft: "400px" }, 300).addClass("on");
-  //   } else {
-  //     $("#p-aside-nav-icon").addClass("off");
-  //     $(this).animate({ marginLeft: "0px" }, 300);
-  //   }
-  // });
 
   // スクロールが100pxの位置に達したらボタンを表示
   $(window).on("scroll", () => {

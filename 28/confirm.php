@@ -1,12 +1,13 @@
 <?php
 session_start();
 // 定数
-require_once '../../const.php';
+require_once '../../config.php';
 // 関数
 require_once 'model/utility/Hash.php'; // ハッシュ
 require_once 'model/sql/CRUD.php'; // PDO
 require_once 'model/sql/Create.php';
-
+$passNum = 0;
+$password = '';
 // 前に戻るボタン押した
 if (isset($_POST['back'])) {
     $_SESSION['reWrite'] = '再度パスワードを入力してください';
@@ -16,6 +17,11 @@ if (isset($_POST['back'])) {
 if (!isset($_SESSION['name'])) {
     header('Location:entry.php');
     exit;
+} else {
+    $passNum = mb_strlen($_SESSION['password']);
+    for ($i = 0; $i < $passNum; $i++) {
+        $password .= '●';
+    }
 }
 // 登録ボタン押した
 if (isset($_POST['entry'])) {

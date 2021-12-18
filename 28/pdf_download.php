@@ -1,7 +1,7 @@
 <?php
 session_start();
 // news内容を表示
-require_once '../../const.php';
+require_once '../../config.php';
 require_once 'model/sql/CRUD.php';
 require_once 'model/sql/PDF.php';
 
@@ -20,9 +20,7 @@ $data = $sql->getContents($_GET['pdfId']);
 </head>
 
 <body>
-    <?php require_once 'base/header.php' ?>
     <p><?php echo $data['content'] ?></p>
-    <?php require_once 'base/footer.php' ?>
 </body>
 
 </html>

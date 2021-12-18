@@ -23,7 +23,7 @@
             <div>
                 <p class="c-padding-bottom_10">氏名:<span><?php echo $_SESSION['name'] ?></span></p>
                 <p class="c-padding-bottom_10">ログインID:<span><?php echo $_SESSION['loginId'] ?></span></p>
-                <p class="c-padding-bottom_10">パスワード:<span><?php echo $_SESSION['password'] ?></span></p>
+                <p class="c-padding-bottom_10">パスワード:<span><?php echo $password ?></span></p>
                 <p class="c-padding-bottom_10">メールアドレス:<span><?php echo $_SESSION['mail'] ?></span></p>
             </div>
             <div class="c-flex c-flex-gap_10 c-justify-content-center">

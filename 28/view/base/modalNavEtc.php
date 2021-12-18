@@ -1,6 +1,9 @@
 <!-- modal nav -->
-<div id="u-modalNav" style="display:none">
-    <div class="u-padding-inner">
+<div id="u-modalNav" style="display:none" class="c-flex">
+    <!-- <div class="c-flex-basis_80">
+        <p><img src="view/img/modal.jpg" alt="マイページ" height="900px" width="1000">1</p>
+    </div> -->
+    <div class="u-padding-inner c-flex-basis_20">
         <ul>
             <li class="c-transform-bottom">
                 <div class="u-closeModal"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="opacity: 0.7;" xml:space="preserve">

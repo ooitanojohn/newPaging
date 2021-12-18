@@ -1,7 +1,7 @@
 <?php
 session_start();
 // 定数
-require_once '../../const.php';
+require_once '../../config.php';
 
 // 関数
 // SQL
@@ -14,7 +14,7 @@ require_once PDF_PATH;
 
 // ログイン || ログアウト状態
 if (!isset($_COOKIE['state'])) {
-    header('Location:login.php');
+    header('Location:entry.php');
     exit;
 }
 // cookie値にhashLoginIdを持っていなければlogin.phpへ
@@ -65,7 +65,7 @@ if (isset($_POST['pdf'])) {
     $html = file_get_contents(BASE_URL . '/28/' . 'pdf_download.php?pdfId=' . $_POST['pdfId']);
     $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::DEFAULT_MODE);
     // Output
-    $mpdf->output('dl' . date('Ymdhis') . '.pdf', 'D');
+    $mpdf->output('dl_' . date('Ymdhis') . '.pdf', 'D');
 }
 
 require_once 'view/index.php';
