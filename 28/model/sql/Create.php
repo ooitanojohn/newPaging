@@ -46,7 +46,7 @@ class CreateUser extends CRUD
         ご利用頂きありがとうございます。<br>
         本登録を完了する為に、以下のURLをクリックしてください<br>" .
             "<a href='" . BASE_URL . "28\main_entry.php?entryComplete=" . $hashLoginId . "'?></a>";
-        $headers = "From:support@shoppies.jp";
+        $headers = FROM;
         // *** メール送信 ***
         if (mb_send_mail($mailto, $title, $message, $headers)) {
             return true;

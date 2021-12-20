@@ -32,7 +32,7 @@ if (isset($_POST['entry'])) {
     // DBに登録
     $User->createUser($_SESSION['name'], $_SESSION['mail'], $_SESSION['loginId'], $password, $hashLoginId, $salt, $stretch);
     // メール送信
-    // $User->entryMailSend($_SESSION['name'], $_SESSION['mail'], $hashLoginId);
+    $User->entryMailSend($_SESSION['name'], $_SESSION['mail'], $hashLoginId);
     // 登録完了画面へ移行
     $User = NULL;
     $_SESSION['hashLoginId'] = $hashLoginId;

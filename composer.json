@@ -1,0 +1,15 @@
+{
+    "name": "nitoe/ph24s10b",
+    "autoload": {
+        "psr-4": {
+            "Nitoe\\Ph24s10b\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "shuto niimi",
+            "email": "71388489+ooitanojohn@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
